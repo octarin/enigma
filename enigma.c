@@ -50,10 +50,11 @@ Rotor rotors[3];
 /* initRotors: initialise les 3 rotors en fonction du choix de l'utilisateur */
 void initRotors(short rnumbers, int rpositions[])
 {
-    rotors[0] = initRotor(dispositions[(rnumbers & 0x7) - 1], rpositions[0]);
-    rotors[1] = initRotor(dispositions[((rnumbers & 0x38) >> 3) - 1], 
+    rotors[0] = initRotor(dispositions[(rnumbers & 07) - 1],
+            rpositions[0]);
+    rotors[1] = initRotor(dispositions[((rnumbers & 070) >> 3) - 1], 
             rpositions[1]);
-    rotors[2] = initRotor(dispositions[((rnumbers & 0x1c0) >> 6) - 1], 
+    rotors[2] = initRotor(dispositions[((rnumbers & 0700) >> 6) - 1], 
             rpositions[2]);
 }
 
